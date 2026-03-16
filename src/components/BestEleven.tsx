@@ -15,7 +15,7 @@ const INITIAL_TEAM = [
   { pos: "Mister", name: "Tommaso Maestrelli" }
 ];
 
-export default function BestEleven() {
+const BestEleven = () => {
   const [likes, setLikes] = useState(0);
 
   return (
@@ -27,14 +27,35 @@ export default function BestEleven() {
             <p className="text-white/50 uppercase text-xs tracking-widest mt-2">La formazione dei sogni biancocelesti</p>
           </div>
           
-          {/* Funzione di approvazione della formazione */}
           <button 
+            type="button"
             onClick={() => setLikes(likes + 1)}
             className="group flex items-center gap-4 bg-[#001e3c] border border-[#87D3F8]/30 px-6 py-3 hover:border-[#87D3F8] transition-all"
           >
-            <span className="text-white/70 uppercase text-xs font-bold tracking-widest">Approvi questa formazione?</span>
+            <span className="text-white/70 uppercase text-xs font-bold tracking-widest">Ti piace?</span>
             <span className="text-[#87D3F8] font-black text-xl group-hover:scale-125 transition-transform">💙 {likes}</span>
           </button>
         </div>
         
-        {
+        <div className="bg-[#001e3c] p-8 md:p-12 border border-[#87D3F8]/20 relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+            {INITIAL_TEAM.map((player, i) => (
+              <div 
+                key={i} 
+                className="flex items-center justify-between bg-black/40 p-4 border-l-4 border-[#87D3F8]"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[#87D3F8] text-[10px] font-black uppercase tracking-tighter">{player.pos}</span>
+                  <span className="text-white font-bold uppercase tracking-tight text-lg">{player.name}</span>
+                </div>
+                <span className="text-white/10 font-black text-2xl italic">#{i + 1}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BestEleven;
