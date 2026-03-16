@@ -1,6 +1,11 @@
 body {
   background-color: #001e3c;
-  color: white;
+  color: #ffffff;
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+  display: block;
+}
+
+h1 {
+  color: #87D3F8;
 }
