@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #001e3c; /* Navy ancora più profondo */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Effetto "Muro dello Stadio" */
+  .bg-stadium-texture {
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-attachment: fixed;
+  }
+}
+
+.font-ultras {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.shadow-glow-sky {
+  text-shadow: 0 0 15px rgba(135, 211, 248, 0.6);
+}
