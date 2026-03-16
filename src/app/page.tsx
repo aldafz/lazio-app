@@ -1,13 +1,17 @@
 import React from 'react';
+import Navigation from '../components/Navigation';
+import Hero from '../components/Hero';
 
 export default function Home() {
   return (
-    <main style={{ padding: '50px', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '4rem', color: '#87D3F8' }}>S.S. LAZIO</h1>
-      <p style={{ fontSize: '1.5rem' }}>CURVA NORD 1900</p>
-      <div style={{ marginTop: '20px', padding: '20px', border: '2px solid #87D3F8' }}>
-        <p>BUILD TEST #40: CARICAMENTO COMPLETATO</p>
-      </div>
+    <main>
+      <Navigation />
+      <Hero />
+      
+      {/* Sezione provvisoria per i prossimi passi */}
+      <section className="py-20 bg-black text-center">
+        <h3 className="text-lazio font-bold">PROSSIMO STEP: HALL OF FAME</h3>
+      </section>
     </main>
   );
 }
