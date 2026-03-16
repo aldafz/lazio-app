@@ -2,11 +2,6 @@ import React from 'react';
 import './globals.css';
 import Navigation from '../components/Navigation';
 
-export const metadata = {
-  title: 'S.S. LAZIO | Curva Nord',
-  description: 'Sito ufficiale della tifoseria biancoceleste',
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -14,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">
-      <body className="antialiased">
+      <body>
         <Navigation />
         {children}
       </body>
