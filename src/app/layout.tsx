@@ -1,6 +1,5 @@
 import React from 'react';
-import './globals.css';
-import Navigation from '../components/Navigation';
+import './styles.css';
 
 export default function RootLayout({
   children,
@@ -10,7 +9,6 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body>
-        <Navigation />
         {children}
       </body>
     </html>
