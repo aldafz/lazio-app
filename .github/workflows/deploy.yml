@@ -9,13 +9,11 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,14 +21,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # Abbiamo rimosso il caching del lockfile per evitare l'errore che ricevevi
+          node-version: "24" # Aggiornato a Node 24 come richiesto dai runner
           
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5 # Aggiornato alla v5
         
       - name: Install dependencies
-        # npm install funzionerà anche senza package-lock.json
         run: npm install
         
       - name: Build with Next.js
