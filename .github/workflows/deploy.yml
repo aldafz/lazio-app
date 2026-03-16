@@ -2,7 +2,7 @@ name: Deploy Lazio Site to Pages
 
 on:
   push:
-    branches: ["main"] # Si attiva ogni volta che carichi su questo branch
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -24,12 +24,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # Abbiamo rimosso il caching del lockfile per evitare l'errore che ricevevi
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
       - name: Install dependencies
+        # npm install funzionerà anche senza package-lock.json
         run: npm install
         
       - name: Build with Next.js
@@ -38,7 +39,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Next.js esporta i file statici nella cartella 'out'
           path: ./out
 
   deploy:
