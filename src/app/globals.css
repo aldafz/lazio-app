@@ -2,31 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 30, 60;
-  --background-end-rgb: 0, 0, 0;
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #001e3c;
+  color: white;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
-/* Stili personalizzati Curva Nord */
+/* Classi di utilità per il design */
 .sky-glow {
-  text-shadow: 0 0 15px rgba(135, 211, 248, 0.5);
+  text-shadow: 0 0 10px rgba(135, 211, 248, 0.5);
 }
 
 .bg-stadium-texture {
-  background-color: #001e3c;
-  background-image: radial-gradient(circle at center, rgba(135, 211, 248, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, #002d5a 0%, #001e3c 100%);
 }
