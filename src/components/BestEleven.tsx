@@ -1,6 +1,7 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 
-const TEAM = [
+const INITIAL_TEAM = [
   { pos: "POR", name: "Angelo Peruzzi" },
   { pos: "DIF", name: "Alessandro Nesta" },
   { pos: "DIF", name: "Giuseppe Wilson" },
@@ -11,33 +12,29 @@ const TEAM = [
   { pos: "ATT", name: "Beppe Signori" },
   { pos: "ATT", name: "Giorgio Chinaglia" },
   { pos: "ATT", name: "Hernan Crespo" },
-  { pos: "ATT", name: "Reja (Mister)" } // Un mister d'onore
+  { pos: "Mister", name: "Tommaso Maestrelli" }
 ];
 
 export default function BestEleven() {
+  const [likes, setLikes] = useState(0);
+
   return (
     <section id="best-11" className="py-24 bg-black px-8 border-t border-[#87D3F8]/10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-[#87D3F8] text-4xl font-black italic mb-12 tracking-tighter uppercase text-center">BEST XI STORICA</h2>
-        
-        {/* Schema Tattico Ultra-Semplificato */}
-        <div className="bg-[#001e3c] p-10 border border-[#87D3F8]/20 relative">
-          
-          {/* Sfondo Campo Provvisorio (Linee decorative) */}
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1 border-t border-b border-[#87D3F8]/10" />
-          <div className="absolute inset-x-1/4 h-full border-l border-r border-[#87D3F8]/10 top-0" />
-
-          {/* Lista Giocatori (In griglia) */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6 relative z-10">
-            {TEAM.map((player, i) => (
-              <div key={i} className="flex gap-3 items-center bg-black/40 p-4 border border-[#87D3F8]/5">
-                <span className="text-lazio text-sm font-black w-10 text-right uppercase tracking-wider">{player.pos}</span>
-                <span className="text-white font-bold uppercase text-lg">{player.name}</span>
-              </div>
-            ))}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 className="text-[#87D3F8] text-4xl font-black italic tracking-tighter uppercase">Best XI Storica</h2>
+            <p className="text-white/50 uppercase text-xs tracking-widest mt-2">La formazione dei sogni biancocelesti</p>
           </div>
+          
+          {/* Funzione di approvazione della formazione */}
+          <button 
+            onClick={() => setLikes(likes + 1)}
+            className="group flex items-center gap-4 bg-[#001e3c] border border-[#87D3F8]/30 px-6 py-3 hover:border-[#87D3F8] transition-all"
+          >
+            <span className="text-white/70 uppercase text-xs font-bold tracking-widest">Approvi questa formazione?</span>
+            <span className="text-[#87D3F8] font-black text-xl group-hover:scale-125 transition-transform">💙 {likes}</span>
+          </button>
         </div>
-      </div>
-    </section>
-  );
-}
+        
+        {
