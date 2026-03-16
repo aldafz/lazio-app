@@ -3,17 +3,6 @@
 @tailwind utilities;
 
 body {
-  background-color: #001e3c;
+  background: #001e3c;
   color: white;
-  margin: 0;
-  padding: 0;
-}
-
-/* Classi di utilità per il design */
-.sky-glow {
-  text-shadow: 0 0 10px rgba(135, 211, 248, 0.5);
-}
-
-.bg-stadium-texture {
-  background: radial-gradient(circle, #002d5a 0%, #001e3c 100%);
 }
